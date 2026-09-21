@@ -1,0 +1,1626 @@
+{
+  "seal_version": 1,
+  "kind": "agentcore-decision-capture",
+  "what_this_proves": [
+    "That a specific authorization decision was made by AWS Bedrock AgentCore, at a stated time, by a named policy engine, in a stated enforcement mode.",
+    "Which Cedar policy determined the outcome, by id, and what the outcome was (ALLOW or DENY).",
+    "That the set of decisions in this bundle has not been altered or reduced since capture: every entry is SHA-512 linked and the final manifest makes an omission detectable."
+  ],
+  "what_this_does_not_prove": [
+    "WHO ASKED. The span carries no principal — no agent identity, no delegated human identity. Axis 4 is unmet and this bundle does not move it.",
+    "WHAT THEY ASKED FOR. No arguments. amount, to and from appear nowhere in the decision span. Axis 5 is unmet and this bundle does not move it.",
+    "WHICH VERSION OF THE RULE. The deciding policy is named by id, not by version. Axis 6 stays half-met.",
+    "THAT NOTHING WAS OMITTED. A suppressed call that never reaches the gateway emits no span, so it cannot appear here and its absence is indistinguishable from it never having happened.",
+    "THAT THE CAPTURE WAS HONEST. Without external anchoring this proves internal consistency of a capture the operator produced. Same custody ceiling as the config seal."
+  ],
+  "captured_at_unsealed": "2026-09-16T15:21:19.589Z",
+  "source": {
+    "log_group": "aws/spans",
+    "span_name": "AgentCore.Policy.AuthorizeAction",
+    "window_minutes": 2
+  },
+  "redaction": {
+    "applied": false,
+    "note": "Decision spans carry no principal and no arguments, so there is nothing to redact. That is a limitation, not a privacy property."
+  },
+  "root": "ac171b4ac00aa88d8beb2363db67f427ad97417a9c466ac8741e1b8fd7df1a72aa42f36f9968fbcb3e293c982331b7842ed7450b039e24fe7e4b65d0dd47261c",
+  "entry_count": 53,
+  "entries": [
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "ab3b6dad-460b-49ac-b0d8-47c62d8d22af",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab37f788b15075412ddfc4994ddee",
+        "span_id": "e1fde6b8360c53b2",
+        "start_time_unix_nano": 1789571967950000000
+      },
+      "previousHash": null,
+      "hash": "d36d2beb4f98b3607f6ca17c07709bd36a30fbf59f6485cbed24f0d6caf88a43a375d3b13f678f5cf852c9eb2af26f3c280588ae1adad7855c7b516e14473a74"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "44582281-39e7-49f7-ae9c-7c13d4e38386",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3807ceb06d820d538232707cfa9",
+        "span_id": "df9ac64dbe428d81",
+        "start_time_unix_nano": 1789571968543000000
+      },
+      "previousHash": "d36d2beb4f98b3607f6ca17c07709bd36a30fbf59f6485cbed24f0d6caf88a43a375d3b13f678f5cf852c9eb2af26f3c280588ae1adad7855c7b516e14473a74",
+      "hash": "01d704de26e9770a0a5fa83bd16568d1488edc9f087e42666925875672dbdc848bc253be5692c64316ef07d46fd42247014583f2d32179d6d44bb5678fbb3508"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "7538cbe7-f076-4b5c-bc26-1c12006afb49",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab39b27be6e7657519d4d3f7241c0",
+        "span_id": "6604cd2f58fc47ad",
+        "start_time_unix_nano": 1789571995758000000
+      },
+      "previousHash": "01d704de26e9770a0a5fa83bd16568d1488edc9f087e42666925875672dbdc848bc253be5692c64316ef07d46fd42247014583f2d32179d6d44bb5678fbb3508",
+      "hash": "3505dd05109ace6711576202b70a0d3c6f6fdfcb12723d7269fad6f728df436c52c92d95b1043a0a5b2f61232e1fa21e0066d7d050bb87c4cc8218367171ee2e"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "ba099f1c-857a-428c-a190-cd62f5a848b5",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab39b3d54b4af0e206ef47c553d87",
+        "span_id": "db9c761e7d425429",
+        "start_time_unix_nano": 1789571995993000000
+      },
+      "previousHash": "3505dd05109ace6711576202b70a0d3c6f6fdfcb12723d7269fad6f728df436c52c92d95b1043a0a5b2f61232e1fa21e0066d7d050bb87c4cc8218367171ee2e",
+      "hash": "68dda08eea6e986f5d4a1f1eb6d229216f2c7532ce3232e43de2fb56308db8090d2c03382b9e5e801facca09a6361ba068f9a68014deb05504fae4aaca3472e6"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "9ef593a1-4766-4d6a-9d4f-45c75530b09c",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab39c53a0dd3925fc9c3907f7a78b",
+        "span_id": "20288318dd029b58",
+        "start_time_unix_nano": 1789571996187000000
+      },
+      "previousHash": "68dda08eea6e986f5d4a1f1eb6d229216f2c7532ce3232e43de2fb56308db8090d2c03382b9e5e801facca09a6361ba068f9a68014deb05504fae4aaca3472e6",
+      "hash": "16f3ffaf20918a11a8e114ee77f4e3921991f6a162b093a5457410b6be6938c584b4af142ea35d444993b7653b8179324cb5804fb8649505084ebe3b94bda007"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "109a41f2-49e3-4215-9687-e12fb16fd500",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab39c1c4d8c5b6f25575d364341a1",
+        "span_id": "2b82824b24ba4abf",
+        "start_time_unix_nano": 1789571996443000000
+      },
+      "previousHash": "16f3ffaf20918a11a8e114ee77f4e3921991f6a162b093a5457410b6be6938c584b4af142ea35d444993b7653b8179324cb5804fb8649505084ebe3b94bda007",
+      "hash": "790a7c230efad06e86a0e7919ca5949abf47c0d9ba1593cde7314e4ae2a3ea3e8d204a0430e291487927add1992bab4d0fecb589d433fc91972b0fa6023426b9"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "267063c9-8339-468e-abe7-f97cef342aea",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab39c260b7f802ef9479502dc8fe8",
+        "span_id": "172cdb774388fead",
+        "start_time_unix_nano": 1789571996650000000
+      },
+      "previousHash": "790a7c230efad06e86a0e7919ca5949abf47c0d9ba1593cde7314e4ae2a3ea3e8d204a0430e291487927add1992bab4d0fecb589d433fc91972b0fa6023426b9",
+      "hash": "3f7dd3921a5347a2d6792d50ed7de5a05faa0ced797e997f7e3ec15bd0e123628d0a89dbc53a0182cc3f219f4453c8f3f227e60d22e59e259a7a3468d1c03f76"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "ea64d270-fbcc-4b60-a877-9eb888f4c4bc",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab39c5c7c084e73b8bb450f4a58f7",
+        "span_id": "0e427afb145d2f73",
+        "start_time_unix_nano": 1789571996841000000
+      },
+      "previousHash": "3f7dd3921a5347a2d6792d50ed7de5a05faa0ced797e997f7e3ec15bd0e123628d0a89dbc53a0182cc3f219f4453c8f3f227e60d22e59e259a7a3468d1c03f76",
+      "hash": "4d71123ed5405ca757a0f5ae872d4d69b105f9133928ab4804eb03931ebf7b4843474745364580771483004029e3a627dee513218a2c1f69101cb94338e0a585"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "0e0eabc3-f233-47db-8c1b-668a7b97d4e7",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab39c36d74d0b301a7a453cde84cb",
+        "span_id": "9c8d46dbf867d6a1",
+        "start_time_unix_nano": 1789571997049000000
+      },
+      "previousHash": "4d71123ed5405ca757a0f5ae872d4d69b105f9133928ab4804eb03931ebf7b4843474745364580771483004029e3a627dee513218a2c1f69101cb94338e0a585",
+      "hash": "f3726558e341d0b3a3f277d04520aa8b573372570aa2b27f768e1846eeec788989841daa291a6ce4aaeca45c64ca80e85658b2c7c35813566426384106b56305"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "ac8df988-d2b3-4f33-af7a-e56d8e9e1a2b",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab39d19309dee6e181d172567a9c1",
+        "span_id": "0119b4482ba8d1f5",
+        "start_time_unix_nano": 1789571997292000000
+      },
+      "previousHash": "f3726558e341d0b3a3f277d04520aa8b573372570aa2b27f768e1846eeec788989841daa291a6ce4aaeca45c64ca80e85658b2c7c35813566426384106b56305",
+      "hash": "787ae9bb717e9b503c4843c4fb669a2f34ca04b3838b202ff24e59cf71e22972b5709806222f27b23f154d563d61a7b4b9c5aa2bdf4fb26eea30e7deb82a1572"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "3e72665e-b165-4164-8eea-777a68a86f08",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab39d125defd96725147c3ea37718",
+        "span_id": "8dbe95f82a72bcb4",
+        "start_time_unix_nano": 1789571997451000000
+      },
+      "previousHash": "787ae9bb717e9b503c4843c4fb669a2f34ca04b3838b202ff24e59cf71e22972b5709806222f27b23f154d563d61a7b4b9c5aa2bdf4fb26eea30e7deb82a1572",
+      "hash": "ec263a60b67389f09e9f2fb0f82c00bcf0c8b21e12bc5f5394bf5c807d31f4c0329cf81ed9c25c7e85ef127abe482977ecb4d5fee43896b22b7fe0c441489ee0"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "e8afa4bb-017f-4062-be9d-292eeb9d76da",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab39d4595e13508a0813b4a05f68b",
+        "span_id": "8636122c14f5bee3",
+        "start_time_unix_nano": 1789571997676000000
+      },
+      "previousHash": "ec263a60b67389f09e9f2fb0f82c00bcf0c8b21e12bc5f5394bf5c807d31f4c0329cf81ed9c25c7e85ef127abe482977ecb4d5fee43896b22b7fe0c441489ee0",
+      "hash": "24f052eaacbf8d79d89efbf6965e94f0b95940bcf3a884e2f44ec3d04c7588b3d83f8b2dcf903321a1525b4935159cd9c5af032cc8b52054fb588cbac938b38b"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "c534e29f-0231-4e6d-8361-570a33165c92",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab39d61c7eff305a3c57d0767eca4",
+        "span_id": "1c5fe0c75be21676",
+        "start_time_unix_nano": 1789571997873000000
+      },
+      "previousHash": "24f052eaacbf8d79d89efbf6965e94f0b95940bcf3a884e2f44ec3d04c7588b3d83f8b2dcf903321a1525b4935159cd9c5af032cc8b52054fb588cbac938b38b",
+      "hash": "cf58cc8c6bf79d16177256ba2e3b17c5e88a899d23d418532f5a6635016a2d2849bac3c1bda0978c862f118d3d9e8534caace585ff585da554ca04e46b523c8f"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "06ef9712-28be-462e-8845-c8c3ad406622",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab39e778a61e45b1574241d3bfcd6",
+        "span_id": "2c155ef46fb26b08",
+        "start_time_unix_nano": 1789571998130000000
+      },
+      "previousHash": "cf58cc8c6bf79d16177256ba2e3b17c5e88a899d23d418532f5a6635016a2d2849bac3c1bda0978c862f118d3d9e8534caace585ff585da554ca04e46b523c8f",
+      "hash": "1547a03f3d9cb9e2f0b8384dcd6ef70271f49d518171cdd6efa41bd7efb03c3436d757d7511c89b2627c69d9da81354a59b7df26aba7813c7d56d7da7f235ac7"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "e506111b-f0dc-4077-9d4b-5a68fc4c6c39",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab39e7a337e6b36a679505be6becb",
+        "span_id": "0a883a67a2dda91d",
+        "start_time_unix_nano": 1789571998268000000
+      },
+      "previousHash": "1547a03f3d9cb9e2f0b8384dcd6ef70271f49d518171cdd6efa41bd7efb03c3436d757d7511c89b2627c69d9da81354a59b7df26aba7813c7d56d7da7f235ac7",
+      "hash": "8b138632906412a5a6010ead7d3ecc28048f49db2f9a19ec61cf83f0ccb0c2b5358e758fc959d62cd37f180579e3f936176fd8dce37f870878100dc2cf84b8f9"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "441814e1-0862-4119-aadc-e7cb721fd7b2",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab39e75c6081026c992a042ecb6fd",
+        "span_id": "4f58933c85d832dc",
+        "start_time_unix_nano": 1789571998490000000
+      },
+      "previousHash": "8b138632906412a5a6010ead7d3ecc28048f49db2f9a19ec61cf83f0ccb0c2b5358e758fc959d62cd37f180579e3f936176fd8dce37f870878100dc2cf84b8f9",
+      "hash": "8fa1c713cdd48c5b964a219f5c95283ea6c757ba85cfd09e2caac19f11955aafa7c99891f7b92238947a6719207f6ce397f0af8925f76b566d70951202c73d94"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "19aabe99-d3ed-4de2-81cf-917a5a8ebdcb",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab39e4a800fc40eb99cc4607c019f",
+        "span_id": "55c87ba143e1e7a8",
+        "start_time_unix_nano": 1789571998682000000
+      },
+      "previousHash": "8fa1c713cdd48c5b964a219f5c95283ea6c757ba85cfd09e2caac19f11955aafa7c99891f7b92238947a6719207f6ce397f0af8925f76b566d70951202c73d94",
+      "hash": "528298f16779e0686b8dae8a805e8060d5fc5090ee75c3cc8b499798d53ba51144d4b6528f0012bd1418bb35266a0f6f9c8560e189bd48053115b88cefad6889"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "d397ce78-0de2-4a15-a705-edbba45b24cf",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab39e3c3db73642c0e26a5afe0d35",
+        "span_id": "be49e83ff087ae29",
+        "start_time_unix_nano": 1789571998917000000
+      },
+      "previousHash": "528298f16779e0686b8dae8a805e8060d5fc5090ee75c3cc8b499798d53ba51144d4b6528f0012bd1418bb35266a0f6f9c8560e189bd48053115b88cefad6889",
+      "hash": "34d71906efc6a88da39d6323f1014e5da9ba7455581680bad74a4c81c2985f94e98dbd9912f8fc0a35c3367c0c3ac29a865b8a4cd736f84341ec65b11cf79aa5"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "7e86fb41-21c2-48f7-8c4b-229078a31d59",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab39f54e30d4f1fd60ffb42be8e98",
+        "span_id": "9b4950fe1027a5a7",
+        "start_time_unix_nano": 1789571999110000000
+      },
+      "previousHash": "34d71906efc6a88da39d6323f1014e5da9ba7455581680bad74a4c81c2985f94e98dbd9912f8fc0a35c3367c0c3ac29a865b8a4cd736f84341ec65b11cf79aa5",
+      "hash": "7442f8ee9f99d87f33d8dd0a96d26ed9b18a46550fd7b22e0bc2d59f69ca18596c153a00de6b0dff8913ec649b533f147cb9d33b1949c0ba6e4fd27733d7d847"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "930cf1cd-b347-4883-be36-71ebc1ae31fb",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab39f7aff53ea1d5bfe50248e807a",
+        "span_id": "f446493537279b5f",
+        "start_time_unix_nano": 1789571999340000000
+      },
+      "previousHash": "7442f8ee9f99d87f33d8dd0a96d26ed9b18a46550fd7b22e0bc2d59f69ca18596c153a00de6b0dff8913ec649b533f147cb9d33b1949c0ba6e4fd27733d7d847",
+      "hash": "282dfe4225f6adb514a21d83c1bf2a616098723798e19ce037327f10f37a15e8892702f6db633882ae98a51acad10092c149986583f5683fbe48ea39d6896e6f"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "d7d2f3db-0bac-4374-8840-952296499446",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab39f2e7be6aa4d134f2b326f6a24",
+        "span_id": "c4fdb2b2d2f49fcb",
+        "start_time_unix_nano": 1789571999527000000
+      },
+      "previousHash": "282dfe4225f6adb514a21d83c1bf2a616098723798e19ce037327f10f37a15e8892702f6db633882ae98a51acad10092c149986583f5683fbe48ea39d6896e6f",
+      "hash": "22045565bb40dcc27b9e08de17400b0fa1e5170eb569c3fa2761e2c1ae4f1f4610ac28ba3d332c4d1b1ad5be7704f00272a5d678235c3ba8d644873b58a94a10"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "3399f886-52b1-4b55-a278-28ef20ac4d9f",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab39f37ac8c1b5881ecb772c0e0dc",
+        "span_id": "b447f27ea6e88477",
+        "start_time_unix_nano": 1789571999764000000
+      },
+      "previousHash": "22045565bb40dcc27b9e08de17400b0fa1e5170eb569c3fa2761e2c1ae4f1f4610ac28ba3d332c4d1b1ad5be7704f00272a5d678235c3ba8d644873b58a94a10",
+      "hash": "cdc01215475b6103dd09d28099c6d9e35ad1d6b36a8a95a239dc2d5376ed5dd752be4dc2f7116efedf7a9db7038c7e5132aebfbd8921da7bc70f4a8e4e9670af"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "f30cbea6-0d81-4f50-9e47-e50eb08d52c9",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab39f110d0e007095a7fc474bedf6",
+        "span_id": "cf4eaa3cf73931a2",
+        "start_time_unix_nano": 1789571999903000000
+      },
+      "previousHash": "cdc01215475b6103dd09d28099c6d9e35ad1d6b36a8a95a239dc2d5376ed5dd752be4dc2f7116efedf7a9db7038c7e5132aebfbd8921da7bc70f4a8e4e9670af",
+      "hash": "9d10ded43df6de542561bc4329616d2e2aede4fe30a6b2a84f52b3d40e41782b1df5ecd72d6a78926dc34cdd316f4dd9238e68cad05d5159170a425cd4625ccc"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "e4abb763-d774-4a9a-a171-431c295f4a47",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a047d2f64e037b8e4e398428cf",
+        "span_id": "299256b54f0d02dc",
+        "start_time_unix_nano": 1789572000185000000
+      },
+      "previousHash": "9d10ded43df6de542561bc4329616d2e2aede4fe30a6b2a84f52b3d40e41782b1df5ecd72d6a78926dc34cdd316f4dd9238e68cad05d5159170a425cd4625ccc",
+      "hash": "cd51433236a8ea32387aa18d1ea0c99c78997b0ef457fc61c123cdac3dad7b9b223b5aab535d887c72cbb5a38ca09ed091a6333231bcf7f8bf748554c041bbee"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "0547b3a0-911c-4d8b-bdc2-55a7cad2cea0",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a0456ac4cf6f2faf2b2793f0c9",
+        "span_id": "160a3c75a94f24fb",
+        "start_time_unix_nano": 1789572000322000000
+      },
+      "previousHash": "cd51433236a8ea32387aa18d1ea0c99c78997b0ef457fc61c123cdac3dad7b9b223b5aab535d887c72cbb5a38ca09ed091a6333231bcf7f8bf748554c041bbee",
+      "hash": "4c8968c15c3bb9754f69bf7ee02c76ebd1e19aec7cf4112797c1beb3fcfe6c3be5c1f8217a73c38006c80c1dbb0e037e15483e66f925128bd0ea10cc00df5235"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "c23dae90-32c9-4b4e-b74d-e303df047c2e",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a01d7ba2001f6fa42739eff1d9",
+        "span_id": "35130c797d9cd22c",
+        "start_time_unix_nano": 1789572000551000000
+      },
+      "previousHash": "4c8968c15c3bb9754f69bf7ee02c76ebd1e19aec7cf4112797c1beb3fcfe6c3be5c1f8217a73c38006c80c1dbb0e037e15483e66f925128bd0ea10cc00df5235",
+      "hash": "915df3167cd1f2fe157b0b86ae070cab077d0dd76129227f5323ac4004467137ae36d191026c8f86379cc12d7213101277efaacac5d806fa265077cba3d6bf37"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "07f05f33-8052-43f2-8599-60bab9d5ae8f",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a004bd8172546235685d6d8ceb",
+        "span_id": "2bc7fb009768bcd4",
+        "start_time_unix_nano": 1789572000757000000
+      },
+      "previousHash": "915df3167cd1f2fe157b0b86ae070cab077d0dd76129227f5323ac4004467137ae36d191026c8f86379cc12d7213101277efaacac5d806fa265077cba3d6bf37",
+      "hash": "85a97f4de7c57e2a5fd9d957a7dddd5bfe342139649512926603fd449f956ef5b531f0802899528f8818af61f9bdfb146564253c5550378c65068fd6f0be15ef"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "b36d66a2-e0ed-4220-bc09-8fa3e1fabedf",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a05ceb8afa7ebd05d250d266ef",
+        "span_id": "e82764f209433232",
+        "start_time_unix_nano": 1789572001000000000
+      },
+      "previousHash": "85a97f4de7c57e2a5fd9d957a7dddd5bfe342139649512926603fd449f956ef5b531f0802899528f8818af61f9bdfb146564253c5550378c65068fd6f0be15ef",
+      "hash": "79f010caf846f10aff976df3c42701371ebdbe6f3c2e9d03d877cfec3e2215af45c39710ed8a08e9d6f957d51185e39012a5e71dd5bf7091a0374e91ef7d19f8"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "bd348ce1-da17-4fff-8fea-0d74e3029535",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a1005f2f506e59587171a9fd49",
+        "span_id": "e3491a2dbd7c743a",
+        "start_time_unix_nano": 1789572001135000000
+      },
+      "previousHash": "79f010caf846f10aff976df3c42701371ebdbe6f3c2e9d03d877cfec3e2215af45c39710ed8a08e9d6f957d51185e39012a5e71dd5bf7091a0374e91ef7d19f8",
+      "hash": "efa35618c9a1d45b636c99adbcb326b0ff486a2eb28a498c89618c26a4ec3469321284227a6a75513bcbd43d38b4c58ae613cdf1f5200b370fc274060ed6d700"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "f4266d36-52db-496b-8de1-2b8d5db85239",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a11c9f197c3b14ff631e1aa86a",
+        "span_id": "372fefc1583256be",
+        "start_time_unix_nano": 1789572001345000000
+      },
+      "previousHash": "efa35618c9a1d45b636c99adbcb326b0ff486a2eb28a498c89618c26a4ec3469321284227a6a75513bcbd43d38b4c58ae613cdf1f5200b370fc274060ed6d700",
+      "hash": "8cb74f71d66125c82bf105819bb69bc5a51ae0143faf62d22afea4728e47022dd5cf2b49a9364f1264646be5ee19dfc886692fd420a04616dab04270085aa0ff"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "51d04268-fc14-4719-8621-950d0ec4faf6",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a164ac798c3694a89b26b356ca",
+        "span_id": "5be69924e480f785",
+        "start_time_unix_nano": 1789572001501000000
+      },
+      "previousHash": "8cb74f71d66125c82bf105819bb69bc5a51ae0143faf62d22afea4728e47022dd5cf2b49a9364f1264646be5ee19dfc886692fd420a04616dab04270085aa0ff",
+      "hash": "308914f9e693574a85d1a18cf0059b9c31c938ed95792d4c669a0ff9d9e6c2b9db3ba0db746bdb85051738998c701ce00726e12ea99a8dd619b517089bf4914d"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "dc218194-538f-4cf1-9b3f-4ac18fdc12ff",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a12b905be279f2084a6cc61d6e",
+        "span_id": "ff1e88a4ed98482c",
+        "start_time_unix_nano": 1789572001701000000
+      },
+      "previousHash": "308914f9e693574a85d1a18cf0059b9c31c938ed95792d4c669a0ff9d9e6c2b9db3ba0db746bdb85051738998c701ce00726e12ea99a8dd619b517089bf4914d",
+      "hash": "6fb90256d558799accf0f4a164d30e47f0fcff61ddcc52d836129bb5859b002f33edb28736f62b9c055fdf5bc202fdd635e7706e0c009ee28acdac62d69b8ef5"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "8a41190b-8713-4af7-9345-18ed220d048f",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a1748dad836011529c6600a7bb",
+        "span_id": "0a4469cd5d859089",
+        "start_time_unix_nano": 1789572001864000000
+      },
+      "previousHash": "6fb90256d558799accf0f4a164d30e47f0fcff61ddcc52d836129bb5859b002f33edb28736f62b9c055fdf5bc202fdd635e7706e0c009ee28acdac62d69b8ef5",
+      "hash": "8d353f3b43555781e7b8ba15a98dca40b7e521236c2d08501ce658e40657ca7db9e97c2c99168ce2b0e245664a3f24c9dbb4e209a8a7e2f43257a73b5f3d5a8a"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "c50fbcca-f257-4270-8e4e-3305203ae540",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a2384cbfe5524b3bc82faf6d40",
+        "span_id": "c61478303f50850b",
+        "start_time_unix_nano": 1789572002091000000
+      },
+      "previousHash": "8d353f3b43555781e7b8ba15a98dca40b7e521236c2d08501ce658e40657ca7db9e97c2c99168ce2b0e245664a3f24c9dbb4e209a8a7e2f43257a73b5f3d5a8a",
+      "hash": "dc7469e229fc00621bab064c1300e965c8a0098eab937ac8a16532a546311827a306270de4dc820d52c29b244390d55d00946e683ff7a83beabf4f906b350739"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "b0dba41e-52b7-4ffc-8480-1f2c0a13e6fa",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a208d2b2707601400d7781a84f",
+        "span_id": "cd1761b2ff9d69a2",
+        "start_time_unix_nano": 1789572002330000000
+      },
+      "previousHash": "dc7469e229fc00621bab064c1300e965c8a0098eab937ac8a16532a546311827a306270de4dc820d52c29b244390d55d00946e683ff7a83beabf4f906b350739",
+      "hash": "4a73c5a7cc09a4c30bd99029729ea9f1674758e277a62734b2882c7c8a741cb43df4bd7936340f8f7c5102c95eaa0e219a9458e534608c0704bb0350d4b3abd6"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "6d164112-d356-4290-bd70-43fcc6deba75",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a276c846e91ad6e63031565912",
+        "span_id": "a1de716f134c64de",
+        "start_time_unix_nano": 1789572002570000000
+      },
+      "previousHash": "4a73c5a7cc09a4c30bd99029729ea9f1674758e277a62734b2882c7c8a741cb43df4bd7936340f8f7c5102c95eaa0e219a9458e534608c0704bb0350d4b3abd6",
+      "hash": "fcf2c79aca506038d0355ff39385b6030742b0279dcddbec0f8aa86fda8e7c11be9897a4ef33137386537366ddeab0e2839e055ba2615b669b5f0a9950668615"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "5f54f025-502e-4794-ba25-aabb6a18a3b9",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a265ec63655f2386f26414bd48",
+        "span_id": "6976885c75fb3e66",
+        "start_time_unix_nano": 1789572002802000000
+      },
+      "previousHash": "fcf2c79aca506038d0355ff39385b6030742b0279dcddbec0f8aa86fda8e7c11be9897a4ef33137386537366ddeab0e2839e055ba2615b669b5f0a9950668615",
+      "hash": "7ec8cb9b4656b433dda75770b0f86548449c184f67b749cc9f3ac13d51c0b5dc7de7f245850399f5816f1ea7ef8a487c40caff745195fa835678d9f8d0e20cc9"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "9afa56f9-33a3-47d9-8b79-1ba5d773a80e",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a21a3d7fcc0c2d28b8660075b5",
+        "span_id": "2c3505d633b233a1",
+        "start_time_unix_nano": 1789572003038000000
+      },
+      "previousHash": "7ec8cb9b4656b433dda75770b0f86548449c184f67b749cc9f3ac13d51c0b5dc7de7f245850399f5816f1ea7ef8a487c40caff745195fa835678d9f8d0e20cc9",
+      "hash": "a877029ea997926ef89085056ba1289b8f9958a0b36a0abd7b09f8b9c188780a3d55769d78e5a9e5001bd8adb11b5540bbb0996486974c5c4e2ba519567f0dbd"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "c137b5c4-07a6-4a99-acc2-ac7557cd6d97",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a34d7418102a53cd351f647499",
+        "span_id": "0c2dfdd42fb4aef0",
+        "start_time_unix_nano": 1789572003195000000
+      },
+      "previousHash": "a877029ea997926ef89085056ba1289b8f9958a0b36a0abd7b09f8b9c188780a3d55769d78e5a9e5001bd8adb11b5540bbb0996486974c5c4e2ba519567f0dbd",
+      "hash": "3eb24b80b46fb5cb664dfe7780a6eb15feec510a0f064d92640522f58b88be745592b8ce13cfc1eb27dd651be4c0769b7ddb701cf05fd067a4b7a5a6e1ad74e8"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "b74ba177-d7ed-4bba-875d-3b04df4d371b",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a314e8e0881c3ac475041c2812",
+        "span_id": "8b07e130e35f881b",
+        "start_time_unix_nano": 1789572003388000000
+      },
+      "previousHash": "3eb24b80b46fb5cb664dfe7780a6eb15feec510a0f064d92640522f58b88be745592b8ce13cfc1eb27dd651be4c0769b7ddb701cf05fd067a4b7a5a6e1ad74e8",
+      "hash": "9b0a73f958783c50f7b1eba940711fdbe64b47dcb208025b37fb101635c0fe5c62ad4ea0047f9176404cf8ad70c932989925c2bd45541014d4ac8da0b2f1c322"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "41e4b0c3-b6a5-413e-ae68-2ccfeb43e601",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a33f45ec2f7e0007c7152b022a",
+        "span_id": "7e1608f57a6229a7",
+        "start_time_unix_nano": 1789572003569000000
+      },
+      "previousHash": "9b0a73f958783c50f7b1eba940711fdbe64b47dcb208025b37fb101635c0fe5c62ad4ea0047f9176404cf8ad70c932989925c2bd45541014d4ac8da0b2f1c322",
+      "hash": "b9bb6e3265e62037ac7d79fe3d460d228d3eb73875f9927ece7d2f8e9145cf4046f7850571df01ef4cdbaf0f5dfa6f3fe396d6171efb02c3a1c6934c211ac748"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "c88bb2fd-de46-4975-85e5-7af81194fb89",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a377ebd83d01fa31364796ea9f",
+        "span_id": "9a6e9b4f285a0813",
+        "start_time_unix_nano": 1789572003768000000
+      },
+      "previousHash": "b9bb6e3265e62037ac7d79fe3d460d228d3eb73875f9927ece7d2f8e9145cf4046f7850571df01ef4cdbaf0f5dfa6f3fe396d6171efb02c3a1c6934c211ac748",
+      "hash": "d9be14e1ca12b877014dfac8a6ded02ba7a1394ab7886f60edd2f30719587b02864a1c883ac546ce75906c12f3dac1afd7185c52e24e7de49e73ee83fcf21db6"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "cdab5a4c-edef-4588-aee3-242cb783b644",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a30bf32d0457d21ce92bc9cc5c",
+        "span_id": "07aeab6eb0989440",
+        "start_time_unix_nano": 1789572003980000000
+      },
+      "previousHash": "d9be14e1ca12b877014dfac8a6ded02ba7a1394ab7886f60edd2f30719587b02864a1c883ac546ce75906c12f3dac1afd7185c52e24e7de49e73ee83fcf21db6",
+      "hash": "e7200db8434ad9d86b1edcc5632f96e60fabc37c518c67f02189a43990d197dc7f3946241dda91f2f5f1f4149a9acb6d3e087595a8b991b54012658f4050b211"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "b2fa8fa6-d683-4785-bb79-fcd5f54d4aa5",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a47b1ee73d765bd4df56051961",
+        "span_id": "f6ce1b878d02e4a9",
+        "start_time_unix_nano": 1789572004202000000
+      },
+      "previousHash": "e7200db8434ad9d86b1edcc5632f96e60fabc37c518c67f02189a43990d197dc7f3946241dda91f2f5f1f4149a9acb6d3e087595a8b991b54012658f4050b211",
+      "hash": "d5ecb17c52de1bdd98237611ffdbd8bfa4e7ae6b35aee8560649a23e090b486485fdfa0d78b45bf2ebabdd2848e1b44a5cd7b0f45d7c79417bc79a42f2a928b0"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "05e90f67-3ea4-4302-ba2a-f1f20a4ba4f2",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a4136a8b490a396c285e060b1d",
+        "span_id": "1028ce1f9c60fb89",
+        "start_time_unix_nano": 1789572004352000000
+      },
+      "previousHash": "d5ecb17c52de1bdd98237611ffdbd8bfa4e7ae6b35aee8560649a23e090b486485fdfa0d78b45bf2ebabdd2848e1b44a5cd7b0f45d7c79417bc79a42f2a928b0",
+      "hash": "5a59433fbece6f198999024bb3b3ab3ad41d6b9c5c1e6cc50b1fd4a78773201b84705ce85a440ca3bc206455f5d9445bdafff00bdec32d7f57eb1894ec803928"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "54f11913-1272-46f1-a284-61c68b7a93f6",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a45bd911082fdc150e6f2127bb",
+        "span_id": "940f25d8ba7be307",
+        "start_time_unix_nano": 1789572004586000000
+      },
+      "previousHash": "5a59433fbece6f198999024bb3b3ab3ad41d6b9c5c1e6cc50b1fd4a78773201b84705ce85a440ca3bc206455f5d9445bdafff00bdec32d7f57eb1894ec803928",
+      "hash": "2584ef626c38e3e5105d65398ad12ac2e37943fbecfe92b77bcc33b9c6baca38a7756092ad164b3b19de0731420f6ac20c0c185149ef3d01a7ca448a40a91287"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "1c9dd118-c5bf-40a4-a697-525b814494a2",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a4703042fe2add54a711693909",
+        "span_id": "c598df7e1ab73832",
+        "start_time_unix_nano": 1789572004738000000
+      },
+      "previousHash": "2584ef626c38e3e5105d65398ad12ac2e37943fbecfe92b77bcc33b9c6baca38a7756092ad164b3b19de0731420f6ac20c0c185149ef3d01a7ca448a40a91287",
+      "hash": "4698aeed403130b50cf5327ade9bc2c3b6cedded7dfb56718a2b87d014ebce65c408340115988ad4e4f818fb336ed8c435dcee0da2c2cdb8c5ee136c2dfc6666"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "c59f90e1-59aa-483f-86cb-b31d16de5061",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a47f0c21d939870058012093e0",
+        "span_id": "2c365f392e62e927",
+        "start_time_unix_nano": 1789572004920000000
+      },
+      "previousHash": "4698aeed403130b50cf5327ade9bc2c3b6cedded7dfb56718a2b87d014ebce65c408340115988ad4e4f818fb336ed8c435dcee0da2c2cdb8c5ee136c2dfc6666",
+      "hash": "a4a217fa4d0c2be28c5490db54c99e46b781a354e6d71d1d3d2b4dd70a4e74361fdd0c5cddf7cd0f675c1f39edd26e5133c46a309a596db16db053f117344127"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "87f7dc42-59a5-4b30-8b7c-e6b62a37e8f1",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a53071485f489b7219232e439c",
+        "span_id": "51825e7ce6f22d20",
+        "start_time_unix_nano": 1789572005118000000
+      },
+      "previousHash": "a4a217fa4d0c2be28c5490db54c99e46b781a354e6d71d1d3d2b4dd70a4e74361fdd0c5cddf7cd0f675c1f39edd26e5133c46a309a596db16db053f117344127",
+      "hash": "c63bede87623227ae76a4dd36fa27b958e6d57594b863dc7336f2920d43b10f48e7228ca1073422625b48e02251dd32fd823593b5520bb1a0a60d2ad655159be"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "d5f42db4-e2e2-46aa-a0d3-acc708cebb3d",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a51817877d5673e06c71c8f30a",
+        "span_id": "0da2feaa00bea940",
+        "start_time_unix_nano": 1789572005307000000
+      },
+      "previousHash": "c63bede87623227ae76a4dd36fa27b958e6d57594b863dc7336f2920d43b10f48e7228ca1073422625b48e02251dd32fd823593b5520bb1a0a60d2ad655159be",
+      "hash": "c578efa4162df154e52fa3e15a22f1943cfa66d7b01b517cbb512877f8bc41959e76a2c146a4dc400218dd78a01dbd22995c67e1ff7791d7cad0bc7edb639a55"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "947b9003-829e-489f-8ff9-5b91184b608c",
+        "decision": "ALLOW",
+        "authorization_reason": null,
+        "mismatched_policies": [],
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a52b9d64b4766f4afd50571751",
+        "span_id": "e220f87a197e5001",
+        "start_time_unix_nano": 1789572005467000000
+      },
+      "previousHash": "c578efa4162df154e52fa3e15a22f1943cfa66d7b01b517cbb512877f8bc41959e76a2c146a4dc400218dd78a01dbd22995c67e1ff7791d7cad0bc7edb639a55",
+      "hash": "af87479baa56fe509070a42819be1f0d5b1fd8276088bf059b90b5ec03d8c361912db9fa8044459ca1b11c0d2c3eac03024df0f69636508154d0a4ba6e0fa7ec"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "e391e842-3723-4d64-97a2-d841420dbefb",
+        "decision": "DENY",
+        "authorization_reason": "No policy applies to the request (denied by default).",
+        "mismatched_policies": [],
+        "determining_policies": [],
+        "policy_types": null,
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aaab3a56b66bfbc5dba8dc47fc9009b",
+        "span_id": "f16e4a7622429726",
+        "start_time_unix_nano": 1789572005655000000
+      },
+      "previousHash": "af87479baa56fe509070a42819be1f0d5b1fd8276088bf059b90b5ec03d8c361912db9fa8044459ca1b11c0d2c3eac03024df0f69636508154d0a4ba6e0fa7ec",
+      "hash": "31ed4a64237b45cb0662353b5830683930f450430404b531aa2d5593d9fc5f75e4cf5a8402d56614407c0ebebed976372ed512429ce5193b271eee7ea96db896"
+    },
+    {
+      "data": {
+        "kind": "manifest",
+        "item_count": 52,
+        "items": [
+          {
+            "index": 0,
+            "type": "authorization_decision",
+            "id": "ab3b6dad-460b-49ac-b0d8-47c62d8d22af",
+            "decision": "ALLOW",
+            "hash": "d36d2beb4f98b3607f6ca17c07709bd36a30fbf59f6485cbed24f0d6caf88a43a375d3b13f678f5cf852c9eb2af26f3c280588ae1adad7855c7b516e14473a74"
+          },
+          {
+            "index": 1,
+            "type": "authorization_decision",
+            "id": "44582281-39e7-49f7-ae9c-7c13d4e38386",
+            "decision": "DENY",
+            "hash": "01d704de26e9770a0a5fa83bd16568d1488edc9f087e42666925875672dbdc848bc253be5692c64316ef07d46fd42247014583f2d32179d6d44bb5678fbb3508"
+          },
+          {
+            "index": 2,
+            "type": "authorization_decision",
+            "id": "7538cbe7-f076-4b5c-bc26-1c12006afb49",
+            "decision": "ALLOW",
+            "hash": "3505dd05109ace6711576202b70a0d3c6f6fdfcb12723d7269fad6f728df436c52c92d95b1043a0a5b2f61232e1fa21e0066d7d050bb87c4cc8218367171ee2e"
+          },
+          {
+            "index": 3,
+            "type": "authorization_decision",
+            "id": "ba099f1c-857a-428c-a190-cd62f5a848b5",
+            "decision": "DENY",
+            "hash": "68dda08eea6e986f5d4a1f1eb6d229216f2c7532ce3232e43de2fb56308db8090d2c03382b9e5e801facca09a6361ba068f9a68014deb05504fae4aaca3472e6"
+          },
+          {
+            "index": 4,
+            "type": "authorization_decision",
+            "id": "9ef593a1-4766-4d6a-9d4f-45c75530b09c",
+            "decision": "ALLOW",
+            "hash": "16f3ffaf20918a11a8e114ee77f4e3921991f6a162b093a5457410b6be6938c584b4af142ea35d444993b7653b8179324cb5804fb8649505084ebe3b94bda007"
+          },
+          {
+            "index": 5,
+            "type": "authorization_decision",
+            "id": "109a41f2-49e3-4215-9687-e12fb16fd500",
+            "decision": "DENY",
+            "hash": "790a7c230efad06e86a0e7919ca5949abf47c0d9ba1593cde7314e4ae2a3ea3e8d204a0430e291487927add1992bab4d0fecb589d433fc91972b0fa6023426b9"
+          },
+          {
+            "index": 6,
+            "type": "authorization_decision",
+            "id": "267063c9-8339-468e-abe7-f97cef342aea",
+            "decision": "ALLOW",
+            "hash": "3f7dd3921a5347a2d6792d50ed7de5a05faa0ced797e997f7e3ec15bd0e123628d0a89dbc53a0182cc3f219f4453c8f3f227e60d22e59e259a7a3468d1c03f76"
+          },
+          {
+            "index": 7,
+            "type": "authorization_decision",
+            "id": "ea64d270-fbcc-4b60-a877-9eb888f4c4bc",
+            "decision": "DENY",
+            "hash": "4d71123ed5405ca757a0f5ae872d4d69b105f9133928ab4804eb03931ebf7b4843474745364580771483004029e3a627dee513218a2c1f69101cb94338e0a585"
+          },
+          {
+            "index": 8,
+            "type": "authorization_decision",
+            "id": "0e0eabc3-f233-47db-8c1b-668a7b97d4e7",
+            "decision": "ALLOW",
+            "hash": "f3726558e341d0b3a3f277d04520aa8b573372570aa2b27f768e1846eeec788989841daa291a6ce4aaeca45c64ca80e85658b2c7c35813566426384106b56305"
+          },
+          {
+            "index": 9,
+            "type": "authorization_decision",
+            "id": "ac8df988-d2b3-4f33-af7a-e56d8e9e1a2b",
+            "decision": "DENY",
+            "hash": "787ae9bb717e9b503c4843c4fb669a2f34ca04b3838b202ff24e59cf71e22972b5709806222f27b23f154d563d61a7b4b9c5aa2bdf4fb26eea30e7deb82a1572"
+          },
+          {
+            "index": 10,
+            "type": "authorization_decision",
+            "id": "3e72665e-b165-4164-8eea-777a68a86f08",
+            "decision": "ALLOW",
+            "hash": "ec263a60b67389f09e9f2fb0f82c00bcf0c8b21e12bc5f5394bf5c807d31f4c0329cf81ed9c25c7e85ef127abe482977ecb4d5fee43896b22b7fe0c441489ee0"
+          },
+          {
+            "index": 11,
+            "type": "authorization_decision",
+            "id": "e8afa4bb-017f-4062-be9d-292eeb9d76da",
+            "decision": "DENY",
+            "hash": "24f052eaacbf8d79d89efbf6965e94f0b95940bcf3a884e2f44ec3d04c7588b3d83f8b2dcf903321a1525b4935159cd9c5af032cc8b52054fb588cbac938b38b"
+          },
+          {
+            "index": 12,
+            "type": "authorization_decision",
+            "id": "c534e29f-0231-4e6d-8361-570a33165c92",
+            "decision": "ALLOW",
+            "hash": "cf58cc8c6bf79d16177256ba2e3b17c5e88a899d23d418532f5a6635016a2d2849bac3c1bda0978c862f118d3d9e8534caace585ff585da554ca04e46b523c8f"
+          },
+          {
+            "index": 13,
+            "type": "authorization_decision",
+            "id": "06ef9712-28be-462e-8845-c8c3ad406622",
+            "decision": "DENY",
+            "hash": "1547a03f3d9cb9e2f0b8384dcd6ef70271f49d518171cdd6efa41bd7efb03c3436d757d7511c89b2627c69d9da81354a59b7df26aba7813c7d56d7da7f235ac7"
+          },
+          {
+            "index": 14,
+            "type": "authorization_decision",
+            "id": "e506111b-f0dc-4077-9d4b-5a68fc4c6c39",
+            "decision": "ALLOW",
+            "hash": "8b138632906412a5a6010ead7d3ecc28048f49db2f9a19ec61cf83f0ccb0c2b5358e758fc959d62cd37f180579e3f936176fd8dce37f870878100dc2cf84b8f9"
+          },
+          {
+            "index": 15,
+            "type": "authorization_decision",
+            "id": "441814e1-0862-4119-aadc-e7cb721fd7b2",
+            "decision": "DENY",
+            "hash": "8fa1c713cdd48c5b964a219f5c95283ea6c757ba85cfd09e2caac19f11955aafa7c99891f7b92238947a6719207f6ce397f0af8925f76b566d70951202c73d94"
+          },
+          {
+            "index": 16,
+            "type": "authorization_decision",
+            "id": "19aabe99-d3ed-4de2-81cf-917a5a8ebdcb",
+            "decision": "ALLOW",
+            "hash": "528298f16779e0686b8dae8a805e8060d5fc5090ee75c3cc8b499798d53ba51144d4b6528f0012bd1418bb35266a0f6f9c8560e189bd48053115b88cefad6889"
+          },
+          {
+            "index": 17,
+            "type": "authorization_decision",
+            "id": "d397ce78-0de2-4a15-a705-edbba45b24cf",
+            "decision": "DENY",
+            "hash": "34d71906efc6a88da39d6323f1014e5da9ba7455581680bad74a4c81c2985f94e98dbd9912f8fc0a35c3367c0c3ac29a865b8a4cd736f84341ec65b11cf79aa5"
+          },
+          {
+            "index": 18,
+            "type": "authorization_decision",
+            "id": "7e86fb41-21c2-48f7-8c4b-229078a31d59",
+            "decision": "ALLOW",
+            "hash": "7442f8ee9f99d87f33d8dd0a96d26ed9b18a46550fd7b22e0bc2d59f69ca18596c153a00de6b0dff8913ec649b533f147cb9d33b1949c0ba6e4fd27733d7d847"
+          },
+          {
+            "index": 19,
+            "type": "authorization_decision",
+            "id": "930cf1cd-b347-4883-be36-71ebc1ae31fb",
+            "decision": "DENY",
+            "hash": "282dfe4225f6adb514a21d83c1bf2a616098723798e19ce037327f10f37a15e8892702f6db633882ae98a51acad10092c149986583f5683fbe48ea39d6896e6f"
+          },
+          {
+            "index": 20,
+            "type": "authorization_decision",
+            "id": "d7d2f3db-0bac-4374-8840-952296499446",
+            "decision": "ALLOW",
+            "hash": "22045565bb40dcc27b9e08de17400b0fa1e5170eb569c3fa2761e2c1ae4f1f4610ac28ba3d332c4d1b1ad5be7704f00272a5d678235c3ba8d644873b58a94a10"
+          },
+          {
+            "index": 21,
+            "type": "authorization_decision",
+            "id": "3399f886-52b1-4b55-a278-28ef20ac4d9f",
+            "decision": "DENY",
+            "hash": "cdc01215475b6103dd09d28099c6d9e35ad1d6b36a8a95a239dc2d5376ed5dd752be4dc2f7116efedf7a9db7038c7e5132aebfbd8921da7bc70f4a8e4e9670af"
+          },
+          {
+            "index": 22,
+            "type": "authorization_decision",
+            "id": "f30cbea6-0d81-4f50-9e47-e50eb08d52c9",
+            "decision": "ALLOW",
+            "hash": "9d10ded43df6de542561bc4329616d2e2aede4fe30a6b2a84f52b3d40e41782b1df5ecd72d6a78926dc34cdd316f4dd9238e68cad05d5159170a425cd4625ccc"
+          },
+          {
+            "index": 23,
+            "type": "authorization_decision",
+            "id": "e4abb763-d774-4a9a-a171-431c295f4a47",
+            "decision": "DENY",
+            "hash": "cd51433236a8ea32387aa18d1ea0c99c78997b0ef457fc61c123cdac3dad7b9b223b5aab535d887c72cbb5a38ca09ed091a6333231bcf7f8bf748554c041bbee"
+          },
+          {
+            "index": 24,
+            "type": "authorization_decision",
+            "id": "0547b3a0-911c-4d8b-bdc2-55a7cad2cea0",
+            "decision": "ALLOW",
+            "hash": "4c8968c15c3bb9754f69bf7ee02c76ebd1e19aec7cf4112797c1beb3fcfe6c3be5c1f8217a73c38006c80c1dbb0e037e15483e66f925128bd0ea10cc00df5235"
+          },
+          {
+            "index": 25,
+            "type": "authorization_decision",
+            "id": "c23dae90-32c9-4b4e-b74d-e303df047c2e",
+            "decision": "DENY",
+            "hash": "915df3167cd1f2fe157b0b86ae070cab077d0dd76129227f5323ac4004467137ae36d191026c8f86379cc12d7213101277efaacac5d806fa265077cba3d6bf37"
+          },
+          {
+            "index": 26,
+            "type": "authorization_decision",
+            "id": "07f05f33-8052-43f2-8599-60bab9d5ae8f",
+            "decision": "ALLOW",
+            "hash": "85a97f4de7c57e2a5fd9d957a7dddd5bfe342139649512926603fd449f956ef5b531f0802899528f8818af61f9bdfb146564253c5550378c65068fd6f0be15ef"
+          },
+          {
+            "index": 27,
+            "type": "authorization_decision",
+            "id": "b36d66a2-e0ed-4220-bc09-8fa3e1fabedf",
+            "decision": "DENY",
+            "hash": "79f010caf846f10aff976df3c42701371ebdbe6f3c2e9d03d877cfec3e2215af45c39710ed8a08e9d6f957d51185e39012a5e71dd5bf7091a0374e91ef7d19f8"
+          },
+          {
+            "index": 28,
+            "type": "authorization_decision",
+            "id": "bd348ce1-da17-4fff-8fea-0d74e3029535",
+            "decision": "ALLOW",
+            "hash": "efa35618c9a1d45b636c99adbcb326b0ff486a2eb28a498c89618c26a4ec3469321284227a6a75513bcbd43d38b4c58ae613cdf1f5200b370fc274060ed6d700"
+          },
+          {
+            "index": 29,
+            "type": "authorization_decision",
+            "id": "f4266d36-52db-496b-8de1-2b8d5db85239",
+            "decision": "DENY",
+            "hash": "8cb74f71d66125c82bf105819bb69bc5a51ae0143faf62d22afea4728e47022dd5cf2b49a9364f1264646be5ee19dfc886692fd420a04616dab04270085aa0ff"
+          },
+          {
+            "index": 30,
+            "type": "authorization_decision",
+            "id": "51d04268-fc14-4719-8621-950d0ec4faf6",
+            "decision": "ALLOW",
+            "hash": "308914f9e693574a85d1a18cf0059b9c31c938ed95792d4c669a0ff9d9e6c2b9db3ba0db746bdb85051738998c701ce00726e12ea99a8dd619b517089bf4914d"
+          },
+          {
+            "index": 31,
+            "type": "authorization_decision",
+            "id": "dc218194-538f-4cf1-9b3f-4ac18fdc12ff",
+            "decision": "DENY",
+            "hash": "6fb90256d558799accf0f4a164d30e47f0fcff61ddcc52d836129bb5859b002f33edb28736f62b9c055fdf5bc202fdd635e7706e0c009ee28acdac62d69b8ef5"
+          },
+          {
+            "index": 32,
+            "type": "authorization_decision",
+            "id": "8a41190b-8713-4af7-9345-18ed220d048f",
+            "decision": "ALLOW",
+            "hash": "8d353f3b43555781e7b8ba15a98dca40b7e521236c2d08501ce658e40657ca7db9e97c2c99168ce2b0e245664a3f24c9dbb4e209a8a7e2f43257a73b5f3d5a8a"
+          },
+          {
+            "index": 33,
+            "type": "authorization_decision",
+            "id": "c50fbcca-f257-4270-8e4e-3305203ae540",
+            "decision": "DENY",
+            "hash": "dc7469e229fc00621bab064c1300e965c8a0098eab937ac8a16532a546311827a306270de4dc820d52c29b244390d55d00946e683ff7a83beabf4f906b350739"
+          },
+          {
+            "index": 34,
+            "type": "authorization_decision",
+            "id": "b0dba41e-52b7-4ffc-8480-1f2c0a13e6fa",
+            "decision": "ALLOW",
+            "hash": "4a73c5a7cc09a4c30bd99029729ea9f1674758e277a62734b2882c7c8a741cb43df4bd7936340f8f7c5102c95eaa0e219a9458e534608c0704bb0350d4b3abd6"
+          },
+          {
+            "index": 35,
+            "type": "authorization_decision",
+            "id": "6d164112-d356-4290-bd70-43fcc6deba75",
+            "decision": "DENY",
+            "hash": "fcf2c79aca506038d0355ff39385b6030742b0279dcddbec0f8aa86fda8e7c11be9897a4ef33137386537366ddeab0e2839e055ba2615b669b5f0a9950668615"
+          },
+          {
+            "index": 36,
+            "type": "authorization_decision",
+            "id": "5f54f025-502e-4794-ba25-aabb6a18a3b9",
+            "decision": "ALLOW",
+            "hash": "7ec8cb9b4656b433dda75770b0f86548449c184f67b749cc9f3ac13d51c0b5dc7de7f245850399f5816f1ea7ef8a487c40caff745195fa835678d9f8d0e20cc9"
+          },
+          {
+            "index": 37,
+            "type": "authorization_decision",
+            "id": "9afa56f9-33a3-47d9-8b79-1ba5d773a80e",
+            "decision": "DENY",
+            "hash": "a877029ea997926ef89085056ba1289b8f9958a0b36a0abd7b09f8b9c188780a3d55769d78e5a9e5001bd8adb11b5540bbb0996486974c5c4e2ba519567f0dbd"
+          },
+          {
+            "index": 38,
+            "type": "authorization_decision",
+            "id": "c137b5c4-07a6-4a99-acc2-ac7557cd6d97",
+            "decision": "ALLOW",
+            "hash": "3eb24b80b46fb5cb664dfe7780a6eb15feec510a0f064d92640522f58b88be745592b8ce13cfc1eb27dd651be4c0769b7ddb701cf05fd067a4b7a5a6e1ad74e8"
+          },
+          {
+            "index": 39,
+            "type": "authorization_decision",
+            "id": "b74ba177-d7ed-4bba-875d-3b04df4d371b",
+            "decision": "DENY",
+            "hash": "9b0a73f958783c50f7b1eba940711fdbe64b47dcb208025b37fb101635c0fe5c62ad4ea0047f9176404cf8ad70c932989925c2bd45541014d4ac8da0b2f1c322"
+          },
+          {
+            "index": 40,
+            "type": "authorization_decision",
+            "id": "41e4b0c3-b6a5-413e-ae68-2ccfeb43e601",
+            "decision": "ALLOW",
+            "hash": "b9bb6e3265e62037ac7d79fe3d460d228d3eb73875f9927ece7d2f8e9145cf4046f7850571df01ef4cdbaf0f5dfa6f3fe396d6171efb02c3a1c6934c211ac748"
+          },
+          {
+            "index": 41,
+            "type": "authorization_decision",
+            "id": "c88bb2fd-de46-4975-85e5-7af81194fb89",
+            "decision": "DENY",
+            "hash": "d9be14e1ca12b877014dfac8a6ded02ba7a1394ab7886f60edd2f30719587b02864a1c883ac546ce75906c12f3dac1afd7185c52e24e7de49e73ee83fcf21db6"
+          },
+          {
+            "index": 42,
+            "type": "authorization_decision",
+            "id": "cdab5a4c-edef-4588-aee3-242cb783b644",
+            "decision": "ALLOW",
+            "hash": "e7200db8434ad9d86b1edcc5632f96e60fabc37c518c67f02189a43990d197dc7f3946241dda91f2f5f1f4149a9acb6d3e087595a8b991b54012658f4050b211"
+          },
+          {
+            "index": 43,
+            "type": "authorization_decision",
+            "id": "b2fa8fa6-d683-4785-bb79-fcd5f54d4aa5",
+            "decision": "DENY",
+            "hash": "d5ecb17c52de1bdd98237611ffdbd8bfa4e7ae6b35aee8560649a23e090b486485fdfa0d78b45bf2ebabdd2848e1b44a5cd7b0f45d7c79417bc79a42f2a928b0"
+          },
+          {
+            "index": 44,
+            "type": "authorization_decision",
+            "id": "05e90f67-3ea4-4302-ba2a-f1f20a4ba4f2",
+            "decision": "ALLOW",
+            "hash": "5a59433fbece6f198999024bb3b3ab3ad41d6b9c5c1e6cc50b1fd4a78773201b84705ce85a440ca3bc206455f5d9445bdafff00bdec32d7f57eb1894ec803928"
+          },
+          {
+            "index": 45,
+            "type": "authorization_decision",
+            "id": "54f11913-1272-46f1-a284-61c68b7a93f6",
+            "decision": "DENY",
+            "hash": "2584ef626c38e3e5105d65398ad12ac2e37943fbecfe92b77bcc33b9c6baca38a7756092ad164b3b19de0731420f6ac20c0c185149ef3d01a7ca448a40a91287"
+          },
+          {
+            "index": 46,
+            "type": "authorization_decision",
+            "id": "1c9dd118-c5bf-40a4-a697-525b814494a2",
+            "decision": "ALLOW",
+            "hash": "4698aeed403130b50cf5327ade9bc2c3b6cedded7dfb56718a2b87d014ebce65c408340115988ad4e4f818fb336ed8c435dcee0da2c2cdb8c5ee136c2dfc6666"
+          },
+          {
+            "index": 47,
+            "type": "authorization_decision",
+            "id": "c59f90e1-59aa-483f-86cb-b31d16de5061",
+            "decision": "DENY",
+            "hash": "a4a217fa4d0c2be28c5490db54c99e46b781a354e6d71d1d3d2b4dd70a4e74361fdd0c5cddf7cd0f675c1f39edd26e5133c46a309a596db16db053f117344127"
+          },
+          {
+            "index": 48,
+            "type": "authorization_decision",
+            "id": "87f7dc42-59a5-4b30-8b7c-e6b62a37e8f1",
+            "decision": "ALLOW",
+            "hash": "c63bede87623227ae76a4dd36fa27b958e6d57594b863dc7336f2920d43b10f48e7228ca1073422625b48e02251dd32fd823593b5520bb1a0a60d2ad655159be"
+          },
+          {
+            "index": 49,
+            "type": "authorization_decision",
+            "id": "d5f42db4-e2e2-46aa-a0d3-acc708cebb3d",
+            "decision": "DENY",
+            "hash": "c578efa4162df154e52fa3e15a22f1943cfa66d7b01b517cbb512877f8bc41959e76a2c146a4dc400218dd78a01dbd22995c67e1ff7791d7cad0bc7edb639a55"
+          },
+          {
+            "index": 50,
+            "type": "authorization_decision",
+            "id": "947b9003-829e-489f-8ff9-5b91184b608c",
+            "decision": "ALLOW",
+            "hash": "af87479baa56fe509070a42819be1f0d5b1fd8276088bf059b90b5ec03d8c361912db9fa8044459ca1b11c0d2c3eac03024df0f69636508154d0a4ba6e0fa7ec"
+          },
+          {
+            "index": 51,
+            "type": "authorization_decision",
+            "id": "e391e842-3723-4d64-97a2-d841420dbefb",
+            "decision": "DENY",
+            "hash": "31ed4a64237b45cb0662353b5830683930f450430404b531aa2d5593d9fc5f75e4cf5a8402d56614407c0ebebed976372ed512429ce5193b271eee7ea96db896"
+          }
+        ]
+      },
+      "previousHash": "31ed4a64237b45cb0662353b5830683930f450430404b531aa2d5593d9fc5f75e4cf5a8402d56614407c0ebebed976372ed512429ce5193b271eee7ea96db896",
+      "hash": "ac171b4ac00aa88d8beb2363db67f427ad97417a9c466ac8741e1b8fd7df1a72aa42f36f9968fbcb3e293c982331b7842ed7450b039e24fe7e4b65d0dd47261c"
+    }
+  ]
+}

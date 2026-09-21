@@ -1,0 +1,370 @@
+{
+  "seal_version": "1",
+  "kind": "agentcore-gateway-config-seal",
+  "what_this_proves": "The exact AgentCore gateway CONFIGURATION captured at the stated time — the gateway, its execution role, the policy engine, and every policy's exact Cedar text — has not been altered, removed or reordered since capture.",
+  "what_this_does_not_prove": [
+    "That any particular action was allowed or denied. There is no AgentCore-originated per-decision record to seal: the gateway emits no decision span, and a denial emits nothing at all (F-11).",
+    "That the configuration was unchanged BETWEEN two captures. A seal proves each capture is intact, not that nothing happened in the gap.",
+    "That the capture itself was honest at capture time. Nothing here is counter-signed by a party outside the operator's control; that is external anchoring (P4 axis 1) and it is NOT part of this seal."
+  ],
+  "captured_at_unsealed": "2026-09-13T17:28:22.655Z",
+  "redaction": "The seal is computed over the REDACTED projection — the bytes published here. The raw capture is retained outside the public tree and is NOT what this root covers.",
+  "root": "7639e42752a5ea9852877181aa9394f17c32c492e75ffffffc2b564f2567de262399eae727994af7ac0cdfe262adf7665da6f0b75f7360598889fcb719fa233c",
+  "entry_count": 11,
+  "entries": [
+    {
+      "data": {
+        "index": 0,
+        "type": "capture-context",
+        "id": "caller",
+        "config": {
+          "account": "<AWS_ACCOUNT_ID>",
+          "capturedByArn": "arn:aws:iam::<AWS_ACCOUNT_ID>:user/cc-agentcore",
+          "region": "us-west-2"
+        }
+      },
+      "hash": "3c1bfda86f45440a3bc0ab813353db319509d3319c8ea88e501795f97dae7d2bf75d647dfccb70f89b4f5f1f34b1d33fba2ca3cb718c377bab4d19d28ce90dee",
+      "previousHash": null
+    },
+    {
+      "data": {
+        "index": 1,
+        "type": "gateway",
+        "id": "authz-evidence-gw-dr3quovzsv",
+        "config": {
+          "gatewayArn": "arn:aws:bedrock-agentcore:us-west-2:<AWS_ACCOUNT_ID>:gateway/authz-evidence-gw-dr3quovzsv",
+          "gatewayId": "authz-evidence-gw-dr3quovzsv",
+          "gatewayUrl": "https://authz-evidence-gw-dr3quovzsv.gateway.bedrock-agentcore.us-west-2.amazonaws.com",
+          "createdAt": "2026-09-13T03:29:01.665843+00:00",
+          "updatedAt": "2026-09-13T03:29:02.207361+00:00",
+          "status": "READY",
+          "name": "authz-evidence-gw",
+          "description": "L2 evidence challenge gateway - disposable",
+          "roleArn": "arn:aws:iam::<AWS_ACCOUNT_ID>:role/authz-evidence-gateway-role",
+          "authorizerType": "AWS_IAM",
+          "policyEngineConfiguration": {
+            "arn": "arn:aws:bedrock-agentcore:us-west-2:<AWS_ACCOUNT_ID>:policy-engine/authz_evidence_engine-p2kixx62xj",
+            "mode": "ENFORCE"
+          },
+          "workloadIdentityDetails": {
+            "workloadIdentityArn": "arn:aws:bedrock-agentcore:us-west-2:<AWS_ACCOUNT_ID>:workload-identity-directory/default/workload-identity/authz-evidence-gw-dr3quovzsv"
+          }
+        }
+      },
+      "hash": "0f8f47f357ec9a174ef88d71fb47ee7b0b826b3743105366d6bf103e0b455c811c415d8bb0cdc9b2878640f02b28266ea431759fb8d35e226e2aa90317995487",
+      "previousHash": "3c1bfda86f45440a3bc0ab813353db319509d3319c8ea88e501795f97dae7d2bf75d647dfccb70f89b4f5f1f34b1d33fba2ca3cb718c377bab4d19d28ce90dee"
+    },
+    {
+      "data": {
+        "index": 2,
+        "type": "gateway-role-attached",
+        "id": "authz-evidence-gateway-role",
+        "config": []
+      },
+      "hash": "cbebd0db66323f95dde297a33078b644e739c908f923d13a6f79ee8513b15152053a58aaac46b02fd604deb08fb515b795820f7e5b313cf52f28bf6a6d3c77dc",
+      "previousHash": "0f8f47f357ec9a174ef88d71fb47ee7b0b826b3743105366d6bf103e0b455c811c415d8bb0cdc9b2878640f02b28266ea431759fb8d35e226e2aa90317995487"
+    },
+    {
+      "data": {
+        "index": 3,
+        "type": "gateway-role-inline",
+        "id": "authz-evidence-gateway-role/authz-evidence-gateway-inline",
+        "config": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "InvokeTheToolTarget",
+              "Effect": "Allow",
+              "Action": "lambda:InvokeFunction",
+              "Resource": "arn:aws:lambda:us-west-2:<AWS_ACCOUNT_ID>:function:authz-evidence-transfer-funds"
+            },
+            {
+              "Sid": "WriteItsOwnLogs",
+              "Effect": "Allow",
+              "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+              ],
+              "Resource": "arn:aws:logs:us-west-2:<AWS_ACCOUNT_ID>:log-group:/aws/bedrock-agentcore/*"
+            },
+            {
+              "Sid": "ReadAndAuthorizeAgainstItsPolicyEngine",
+              "Effect": "Allow",
+              "Action": "bedrock-agentcore:*",
+              "Resource": [
+                "arn:aws:bedrock-agentcore:us-west-2:<AWS_ACCOUNT_ID>:policy-engine/authz_evidence_engine-p2kixx62xj",
+                "arn:aws:bedrock-agentcore:us-west-2:<AWS_ACCOUNT_ID>:gateway/*"
+              ]
+            }
+          ]
+        }
+      },
+      "hash": "0952a1b2fe3307f2d7a6a65db080a97b17a6b388a82beafea29861effce153ab93bd0efda32367f5ab4f13b748b11ff4b0536d0308eb467d405b1e456047030a",
+      "previousHash": "cbebd0db66323f95dde297a33078b644e739c908f923d13a6f79ee8513b15152053a58aaac46b02fd604deb08fb515b795820f7e5b313cf52f28bf6a6d3c77dc"
+    },
+    {
+      "data": {
+        "index": 4,
+        "type": "gateway-role-inline",
+        "id": "authz-evidence-gateway-role/authz-evidence-gateway-xray",
+        "config": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "xray:PutTraceSegments",
+                "xray:PutTelemetryRecords"
+              ],
+              "Resource": "*"
+            }
+          ]
+        }
+      },
+      "hash": "152e8125812be40fc056f498e9062b803c90f0e1e11500afcb64c34d4274a2b8e2d762b46fe5ef9a37346365bccb9080018f3df213774bb8d422c04c603b4b57",
+      "previousHash": "0952a1b2fe3307f2d7a6a65db080a97b17a6b388a82beafea29861effce153ab93bd0efda32367f5ab4f13b748b11ff4b0536d0308eb467d405b1e456047030a"
+    },
+    {
+      "data": {
+        "index": 5,
+        "type": "gateway-role-trust",
+        "id": "authz-evidence-gateway-role",
+        "config": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "AgentCoreGatewayAssume",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "bedrock-agentcore.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole",
+              "Condition": {
+                "StringEquals": {
+                  "aws:SourceAccount": "<AWS_ACCOUNT_ID>"
+                },
+                "ArnLike": {
+                  "aws:SourceArn": "arn:aws:bedrock-agentcore:us-west-2:<AWS_ACCOUNT_ID>:gateway/*"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "hash": "43d4489f85b4f0d6086935737ea6e8a49aaa3996a573d0a63583258c8e39fdf9ab8ebe88ca0dd20508099a4aa57f41fa1324888657ce394d5e877a7a765274d1",
+      "previousHash": "152e8125812be40fc056f498e9062b803c90f0e1e11500afcb64c34d4274a2b8e2d762b46fe5ef9a37346365bccb9080018f3df213774bb8d422c04c603b4b57"
+    },
+    {
+      "data": {
+        "index": 6,
+        "type": "gateway-target",
+        "id": "AZA2ISVRXE",
+        "config": {
+          "gatewayArn": "arn:aws:bedrock-agentcore:us-west-2:<AWS_ACCOUNT_ID>:gateway/authz-evidence-gw-dr3quovzsv",
+          "targetId": "AZA2ISVRXE",
+          "createdAt": "2026-09-13T03:37:40.395015+00:00",
+          "updatedAt": "2026-09-13T03:37:41.021416+00:00",
+          "status": "READY",
+          "name": "transfer-funds-target",
+          "description": "L2 tool target - disposable",
+          "targetConfiguration": {
+            "mcp": {
+              "lambda": {
+                "lambdaArn": "arn:aws:lambda:us-west-2:<AWS_ACCOUNT_ID>:function:authz-evidence-transfer-funds",
+                "toolSchema": {
+                  "inlinePayload": [
+                    {
+                      "name": "transfer_funds",
+                      "description": "Transfer funds between two accounts. The action under test in CC-BRIEF-agent-authorization-evidence.md.",
+                      "inputSchema": {
+                        "type": "object",
+                        "properties": {
+                          "amount": {
+                            "type": "number",
+                            "description": "Amount to transfer, in the given currency"
+                          },
+                          "from": {
+                            "type": "string",
+                            "description": "Source account identifier"
+                          },
+                          "currency": {
+                            "type": "string",
+                            "description": "ISO currency code"
+                          },
+                          "to": {
+                            "type": "string",
+                            "description": "Destination account identifier"
+                          }
+                        },
+                        "required": [
+                          "from",
+                          "to",
+                          "amount",
+                          "currency"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "credentialProviderConfigurations": [
+            {
+              "credentialProviderType": "GATEWAY_IAM_ROLE"
+            }
+          ],
+          "metadataConfiguration": {
+            "allowedRequestHeaders": [
+              "x-amzn-bedrock-agentcore-policy-session-id"
+            ]
+          }
+        }
+      },
+      "hash": "01d37561c7376fb5a320903c0609e1721b45a0eb5eac70915b37f424bc712f552c4f4cb8fe81c33f50ff1e034a4e39c61d6e221a81c901f7200cc2545e86ecaa",
+      "previousHash": "43d4489f85b4f0d6086935737ea6e8a49aaa3996a573d0a63583258c8e39fdf9ab8ebe88ca0dd20508099a4aa57f41fa1324888657ce394d5e877a7a765274d1"
+    },
+    {
+      "data": {
+        "index": 7,
+        "type": "policy",
+        "id": "L2_C1_allow_small-kb2v669r0o",
+        "config": {
+          "policyId": "L2_C1_allow_small-kb2v669r0o",
+          "name": "L2_C1_allow_small",
+          "policyEngineId": "authz_evidence_engine-p2kixx62xj",
+          "createdAt": "2026-09-13T04:23:15.451326+00:00",
+          "updatedAt": "2026-09-13T04:23:20.719948+00:00",
+          "policyArn": "arn:aws:bedrock-agentcore:us-west-2:<AWS_ACCOUNT_ID>:policy-engine/authz_evidence_engine-p2kixx62xj/policy/L2_C1_allow_small-kb2v669r0o",
+          "status": "ACTIVE",
+          "enforcementMode": "ACTIVE",
+          "definition": {
+            "cedar": {
+              "statement": "permit(principal, action == AgentCore::Action::\"transfer-funds-target___transfer_funds\", resource == AgentCore::Gateway::\"arn:aws:bedrock-agentcore:us-west-2:<AWS_ACCOUNT_ID>:gateway/authz-evidence-gw-dr3quovzsv\") when { context.input.amount.lessThanOrEqual(decimal(\"10000.0\")) && context.input.to != \"ACCT-SANCTIONED-9\" };"
+            }
+          },
+          "description": "POLICY-SPEC C1: amount <= 10000 and destination not restricted",
+          "statusReasons": []
+        }
+      },
+      "hash": "6a494706127bfed137551b8e47adc4b228e5d9511c2ef7b615e69c3d573f99b32e46b7f4a34977bffac3920cc1e03437bd0f48ec0af8d47cdd7029b0d3c5027d",
+      "previousHash": "01d37561c7376fb5a320903c0609e1721b45a0eb5eac70915b37f424bc712f552c4f4cb8fe81c33f50ff1e034a4e39c61d6e221a81c901f7200cc2545e86ecaa"
+    },
+    {
+      "data": {
+        "index": 8,
+        "type": "policy",
+        "id": "L2_C3_forbid_v3-zjz6s_73hg",
+        "config": {
+          "policyId": "L2_C3_forbid_v3-zjz6s_73hg",
+          "name": "L2_C3_forbid_v3",
+          "policyEngineId": "authz_evidence_engine-p2kixx62xj",
+          "createdAt": "2026-09-13T04:46:31.867753+00:00",
+          "updatedAt": "2026-09-13T04:46:37.179812+00:00",
+          "policyArn": "arn:aws:bedrock-agentcore:us-west-2:<AWS_ACCOUNT_ID>:policy-engine/authz_evidence_engine-p2kixx62xj/policy/L2_C3_forbid_v3-zjz6s_73hg",
+          "status": "ACTIVE",
+          "enforcementMode": "ACTIVE",
+          "definition": {
+            "cedar": {
+              "statement": "forbid(principal, action == AgentCore::Action::\"transfer-funds-target___transfer_funds\", resource == AgentCore::Gateway::\"arn:aws:bedrock-agentcore:us-west-2:<AWS_ACCOUNT_ID>:gateway/authz-evidence-gw-dr3quovzsv\") when { context.input.to == \"ACCT-SANCTIONED-9\" };"
+            }
+          },
+          "description": "POLICY-SPEC C3. Recreated after S4 deleted v2. IGNORE_ALL_FINDINGS - analyzer calls a conditional forbid overly restrictive (F-04).",
+          "statusReasons": []
+        }
+      },
+      "hash": "7b3a41d2b058dd89d1fd87ffb1e4d822267fd33312c2d6384b84472bd5f81068455f0fa3ba05271b2f9fc399eb5b20dd0301479beaa2d6a470924b44c13ef7f6",
+      "previousHash": "6a494706127bfed137551b8e47adc4b228e5d9511c2ef7b615e69c3d573f99b32e46b7f4a34977bffac3920cc1e03437bd0f48ec0af8d47cdd7029b0d3c5027d"
+    },
+    {
+      "data": {
+        "index": 9,
+        "type": "policy-engine",
+        "id": "authz_evidence_engine-p2kixx62xj",
+        "config": {
+          "policyEngineId": "authz_evidence_engine-p2kixx62xj",
+          "name": "authz_evidence_engine",
+          "createdAt": "2026-09-13T02:51:21.001122+00:00",
+          "updatedAt": "2026-09-13T02:51:28.093207+00:00",
+          "policyEngineArn": "arn:aws:bedrock-agentcore:us-west-2:<AWS_ACCOUNT_ID>:policy-engine/authz_evidence_engine-p2kixx62xj",
+          "status": "ACTIVE",
+          "description": "L2 evidence challenge - disposable",
+          "statusReasons": []
+        }
+      },
+      "hash": "106138b7f215479d67f995bf93c3b9d19d8411c72000b8307b35efa638d5b63124c3094d07eee48d33ed9ebc9e7df578ea89ab8e89a200acb406a76462160c55",
+      "previousHash": "7b3a41d2b058dd89d1fd87ffb1e4d822267fd33312c2d6384b84472bd5f81068455f0fa3ba05271b2f9fc399eb5b20dd0301479beaa2d6a470924b44c13ef7f6"
+    },
+    {
+      "data": {
+        "kind": "manifest",
+        "item_count": 10,
+        "items": [
+          {
+            "index": 0,
+            "type": "capture-context",
+            "id": "caller",
+            "hash": "3c1bfda86f45440a3bc0ab813353db319509d3319c8ea88e501795f97dae7d2bf75d647dfccb70f89b4f5f1f34b1d33fba2ca3cb718c377bab4d19d28ce90dee"
+          },
+          {
+            "index": 1,
+            "type": "gateway",
+            "id": "authz-evidence-gw-dr3quovzsv",
+            "hash": "0f8f47f357ec9a174ef88d71fb47ee7b0b826b3743105366d6bf103e0b455c811c415d8bb0cdc9b2878640f02b28266ea431759fb8d35e226e2aa90317995487"
+          },
+          {
+            "index": 2,
+            "type": "gateway-role-attached",
+            "id": "authz-evidence-gateway-role",
+            "hash": "cbebd0db66323f95dde297a33078b644e739c908f923d13a6f79ee8513b15152053a58aaac46b02fd604deb08fb515b795820f7e5b313cf52f28bf6a6d3c77dc"
+          },
+          {
+            "index": 3,
+            "type": "gateway-role-inline",
+            "id": "authz-evidence-gateway-role/authz-evidence-gateway-inline",
+            "hash": "0952a1b2fe3307f2d7a6a65db080a97b17a6b388a82beafea29861effce153ab93bd0efda32367f5ab4f13b748b11ff4b0536d0308eb467d405b1e456047030a"
+          },
+          {
+            "index": 4,
+            "type": "gateway-role-inline",
+            "id": "authz-evidence-gateway-role/authz-evidence-gateway-xray",
+            "hash": "152e8125812be40fc056f498e9062b803c90f0e1e11500afcb64c34d4274a2b8e2d762b46fe5ef9a37346365bccb9080018f3df213774bb8d422c04c603b4b57"
+          },
+          {
+            "index": 5,
+            "type": "gateway-role-trust",
+            "id": "authz-evidence-gateway-role",
+            "hash": "43d4489f85b4f0d6086935737ea6e8a49aaa3996a573d0a63583258c8e39fdf9ab8ebe88ca0dd20508099a4aa57f41fa1324888657ce394d5e877a7a765274d1"
+          },
+          {
+            "index": 6,
+            "type": "gateway-target",
+            "id": "AZA2ISVRXE",
+            "hash": "01d37561c7376fb5a320903c0609e1721b45a0eb5eac70915b37f424bc712f552c4f4cb8fe81c33f50ff1e034a4e39c61d6e221a81c901f7200cc2545e86ecaa"
+          },
+          {
+            "index": 7,
+            "type": "policy",
+            "id": "L2_C1_allow_small-kb2v669r0o",
+            "hash": "6a494706127bfed137551b8e47adc4b228e5d9511c2ef7b615e69c3d573f99b32e46b7f4a34977bffac3920cc1e03437bd0f48ec0af8d47cdd7029b0d3c5027d"
+          },
+          {
+            "index": 8,
+            "type": "policy",
+            "id": "L2_C3_forbid_v3-zjz6s_73hg",
+            "hash": "7b3a41d2b058dd89d1fd87ffb1e4d822267fd33312c2d6384b84472bd5f81068455f0fa3ba05271b2f9fc399eb5b20dd0301479beaa2d6a470924b44c13ef7f6"
+          },
+          {
+            "index": 9,
+            "type": "policy-engine",
+            "id": "authz_evidence_engine-p2kixx62xj",
+            "hash": "106138b7f215479d67f995bf93c3b9d19d8411c72000b8307b35efa638d5b63124c3094d07eee48d33ed9ebc9e7df578ea89ab8e89a200acb406a76462160c55"
+          }
+        ]
+      },
+      "hash": "7639e42752a5ea9852877181aa9394f17c32c492e75ffffffc2b564f2567de262399eae727994af7ac0cdfe262adf7665da6f0b75f7360598889fcb719fa233c",
+      "previousHash": "106138b7f215479d67f995bf93c3b9d19d8411c72000b8307b35efa638d5b63124c3094d07eee48d33ed9ebc9e7df578ea89ab8e89a200acb406a76462160c55"
+    }
+  ]
+}

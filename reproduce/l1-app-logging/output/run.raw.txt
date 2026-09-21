@@ -1,0 +1,10 @@
+=== L1: application logging only ===
+
+S1 (ALLOW): decision=ALLOW executed=true
+S2 (ESCALATE): decision=ESCALATE executed=true
+S3 (DENY): decision=DENY executed=false
+
+--- bypass test: call the tool directly, skipping the policy ---
+bypass executed: true
+ledger moved:    964500 -> 937000
+log lines:       3 (bypass wrote none)

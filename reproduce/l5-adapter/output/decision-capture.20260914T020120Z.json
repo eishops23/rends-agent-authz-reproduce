@@ -1,0 +1,104 @@
+{
+  "seal_version": 1,
+  "kind": "agentcore-decision-capture",
+  "what_this_proves": [
+    "That a specific authorization decision was made by AWS Bedrock AgentCore, at a stated time, by a named policy engine, in a stated enforcement mode.",
+    "Which Cedar policy determined the outcome, by id, and what the outcome was (ALLOW or DENY).",
+    "That the set of decisions in this bundle has not been altered or reduced since capture: every entry is SHA-512 linked and the final manifest makes an omission detectable."
+  ],
+  "what_this_does_not_prove": [
+    "WHO ASKED. The span carries no principal — no agent identity, no delegated human identity. Axis 4 is unmet and this bundle does not move it.",
+    "WHAT THEY ASKED FOR. No arguments. amount, to and from appear nowhere in the decision span. Axis 5 is unmet and this bundle does not move it.",
+    "WHICH VERSION OF THE RULE. The deciding policy is named by id, not by version. Axis 6 stays half-met.",
+    "THAT NOTHING WAS OMITTED. A suppressed call that never reaches the gateway emits no span, so it cannot appear here and its absence is indistinguishable from it never having happened.",
+    "THAT THE CAPTURE WAS HONEST. Without external anchoring this proves internal consistency of a capture the operator produced. Same custody ceiling as the config seal."
+  ],
+  "captured_at_unsealed": "2026-09-14T02:01:20.988Z",
+  "source": {
+    "log_group": "aws/spans",
+    "span_name": "AgentCore.Policy.AuthorizeAction",
+    "window_minutes": 1440
+  },
+  "redaction": {
+    "applied": false,
+    "note": "Decision spans carry no principal and no arguments, so there is nothing to redact. That is a limitation, not a privacy property."
+  },
+  "root": "77495eaab48d6718e304998b09ac9a2c6ad143b9edc596c9f6f55cd6fff444d4b8fd3eaf848eb99ba06fb479175fa8870228d4705219aaff20dca8945dce1823",
+  "entry_count": 3,
+  "entries": [
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "66a95a7c-03cc-4cc4-a328-64590774845d",
+        "decision": "ALLOW",
+        "determining_policies": [
+          "L2_C1_allow_small-kb2v669r0o"
+        ],
+        "policy_types": [
+          [
+            "L2_C1_allow_small-kb2v669r0o",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aa72a044ecba56700c424605f482151",
+        "span_id": "f31f3857c65fc74f",
+        "start_time_unix_nano": 1789340164648000000
+      },
+      "previousHash": null,
+      "hash": "12fab2aab5df698b73242d205884136bff150d0fa074cf5274c1b63c57512fde3efbdcc3aec328a2184c69e59a2120f9ddceb639787cabfb5b317c3b639e9edb"
+    },
+    {
+      "data": {
+        "type": "authorization_decision",
+        "id": "f3614fae-a0b3-498b-926b-74c8920b0535",
+        "decision": "DENY",
+        "determining_policies": [
+          "L2_C3_forbid_v3-zjz6s_73hg"
+        ],
+        "policy_types": [
+          [
+            "L2_C3_forbid_v3-zjz6s_73hg",
+            "Cedar"
+          ]
+        ],
+        "policy_engine_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:policy-engine/authz_evidence_engine-p2kixx62xj",
+        "enforcement_mode": "ENFORCE",
+        "target_resource_id": "authz-evidence-gw-dr3quovzsv",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-west-2:168866076232:gateway/authz-evidence-gw-dr3quovzsv",
+        "trace_id": "6aa72a05276ade315879fa1f2f121554",
+        "span_id": "e582ede527ea4f34",
+        "start_time_unix_nano": 1789340165430000000
+      },
+      "previousHash": "12fab2aab5df698b73242d205884136bff150d0fa074cf5274c1b63c57512fde3efbdcc3aec328a2184c69e59a2120f9ddceb639787cabfb5b317c3b639e9edb",
+      "hash": "e7831f35e62b24084754f266c6a3cf7295ce7583dac438662e54938ccfb04cba3cf9623773c10bfe55da23aed74f6a62019b132f2ccc265c5b68d47e9effe4be"
+    },
+    {
+      "data": {
+        "kind": "manifest",
+        "item_count": 2,
+        "items": [
+          {
+            "index": 0,
+            "type": "authorization_decision",
+            "id": "66a95a7c-03cc-4cc4-a328-64590774845d",
+            "decision": "ALLOW",
+            "hash": "12fab2aab5df698b73242d205884136bff150d0fa074cf5274c1b63c57512fde3efbdcc3aec328a2184c69e59a2120f9ddceb639787cabfb5b317c3b639e9edb"
+          },
+          {
+            "index": 1,
+            "type": "authorization_decision",
+            "id": "f3614fae-a0b3-498b-926b-74c8920b0535",
+            "decision": "DENY",
+            "hash": "e7831f35e62b24084754f266c6a3cf7295ce7583dac438662e54938ccfb04cba3cf9623773c10bfe55da23aed74f6a62019b132f2ccc265c5b68d47e9effe4be"
+          }
+        ]
+      },
+      "previousHash": "e7831f35e62b24084754f266c6a3cf7295ce7583dac438662e54938ccfb04cba3cf9623773c10bfe55da23aed74f6a62019b132f2ccc265c5b68d47e9effe4be",
+      "hash": "77495eaab48d6718e304998b09ac9a2c6ad143b9edc596c9f6f55cd6fff444d4b8fd3eaf848eb99ba06fb479175fa8870228d4705219aaff20dca8945dce1823"
+    }
+  ]
+}

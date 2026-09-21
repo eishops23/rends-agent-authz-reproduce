@@ -1,0 +1,28 @@
+{
+  "ACCT-A": 937000,
+  "ACCT-B": 35500,
+  "entries": [
+    {
+      "from": "ACCT-A",
+      "to": "ACCT-B",
+      "amount": 8000,
+      "currency": "USD",
+      "at": "2026-09-12T22:43:47.339Z"
+    },
+    {
+      "from": "ACCT-A",
+      "to": "ACCT-B",
+      "amount": 27500,
+      "currency": "USD",
+      "at": "2026-09-12T22:43:47.339Z"
+    },
+    {
+      "from": "ACCT-A",
+      "to": "ACCT-SANCTIONED-9",
+      "amount": 27500,
+      "currency": "USD",
+      "at": "2026-09-12T22:43:47.340Z"
+    }
+  ],
+  "ACCT-SANCTIONED-9": 27500
+}

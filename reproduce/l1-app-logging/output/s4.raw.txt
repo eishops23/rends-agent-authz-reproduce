@@ -1,0 +1,15 @@
+=== L1 S4: tamper with the DENY record ===
+
+before: 3 lines
+S3 record before: {"scenario":"S3","agent":"agent://treasury-ops/v1","user":"alice@examplebank.com","action":"transfer_funds","args":{"from":"ACCT-A","to":"ACCT-SANCTIONED-9","amount":27500,"currency":"USD"},"decision":"DENY","clause":"C3","executed":false,"at":"2026-09-12T22:43:47.340Z"}
+
+after:  2 lines
+S3 record after:  <gone>
+
+--- can an outside party detect this? ---
+file mtime is the only residue:  2026-09-12T22:44:00.520Z
+no sequence numbers  -> a removed line leaves no hole
+no hash chain        -> remaining lines still 'agree' with each other
+no external anchor   -> nothing off-box ever saw the original
+
+DETECTABLE BY OUTSIDE PARTY: NO
